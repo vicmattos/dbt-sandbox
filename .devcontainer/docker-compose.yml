@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  app:
+  sandbox:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
@@ -9,7 +9,10 @@ services:
         # Update 'VARIANT' to pick a version of Python: 3, 3.9, 3.8, 3.7, 3.6
         # Append -bullseye or -buster to pin to an OS version.
         # Use -bullseye variants on local arm64/Apple Silicon.
-        VARIANT: 3.8-buster
+        PYTHON_VARIANT: 3.8-buster
+        DBT_VERSION: 0.21.0
+        DBT_PLUGINS: 'postgres'
+        WORKSPACE: /workspace
 
     volumes:
       - ..:/workspace:cached
@@ -27,7 +30,7 @@ services:
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
   db:
-    image: postgres:latest
+    image: postgres:13.4
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data

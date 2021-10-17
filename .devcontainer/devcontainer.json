@@ -4,7 +4,7 @@
 {
 	"name": "Python 3 & PostgreSQL",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
+	"service": "sandbox",
 	"workspaceFolder": "/workspace",
 
 	// Set *default* container specific settings.json values on container create.
@@ -50,5 +50,5 @@
 	// "postCreateCommand": "pip install --user -r requirements.txt",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
+	// "remoteUser": "vscode"
 }
