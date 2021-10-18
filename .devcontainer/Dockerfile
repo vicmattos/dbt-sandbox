@@ -44,5 +44,6 @@ RUN cd ${DBT_HOME} && \
     pip --no-cache-dir install \
         --find-links ${DBT_HOME}/wheels \
         --no-index -r requirements.txt
+COPY ../config/dbt/profiles.yml /root/.dbt/profiles.yml
 WORKDIR ${WORKSPACE}
 # CMD ["dbt", "--version"]
