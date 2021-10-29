@@ -3,8 +3,8 @@ version: '3.8'
 services:
   sandbox:
     build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+      context: .
+      dockerfile: Dockerfile
       args:
         # Update 'PYTHON_VARIANT' to pick a version: 3, 3.9, 3.8, 3.7, 3.6
         # Append -bullseye or -buster to pin to an OS version.
@@ -17,7 +17,7 @@ services:
     volumes:
       - ..:/workspace:cached
     env_file:
-      - ../config/postgres/access.env
+      - ./config/postgres/access.env
     init: true
 
     # Overrides default command so things don't shut down after the process ends.
@@ -36,10 +36,10 @@ services:
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
-      - ../config/postgres/data/sakila-schema.sql:/docker-entrypoint-initdb.d/01-sakila-schema.sql
-      - ../config/postgres/data/sakila-insert-data.sql:/docker-entrypoint-initdb.d/02-sakila-data.sql
+      - ./config/postgres/data/sakila-schema.sql:/docker-entrypoint-initdb.d/01-sakila-schema.sql
+      - ./config/postgres/data/sakila-insert-data.sql:/docker-entrypoint-initdb.d/02-sakila-data.sql
     env_file:
-      - ../config/postgres/access.env
+      - ./config/postgres/access.env
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
