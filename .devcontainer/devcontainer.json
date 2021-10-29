@@ -10,7 +10,7 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"sqltools.connections": [{
-			"name": "Container database",
+			"name": "Data Warehouse",
 			"driver": "PostgreSQL",
 			"previewLimit": 50,
 			"server": "localhost",
