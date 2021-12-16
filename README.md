@@ -14,6 +14,10 @@ This project is intended to be used as simple way to spin up a development/sandb
 3. Open [VSCode palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette)
 4. Copy/Paste `remote-container reopen in container` in it and execute.
 
+## Test
+1. Open the log terminal for the environment build (pop-up will appear).
+2. In a new terminal, run `dbt --help`.
+
 # Credits
 - Dockerfile based on [xemuliam/docker-dbt](https://github.com/xemuliam/docker-dbt) to make it lighter.
 - Used the [Postgres Sakila DB](https://github.com/jOOQ/sakila) for sample data for playing.
