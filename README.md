@@ -20,4 +20,4 @@ This project is intended to be used as simple way to spin up a development/sandb
 
 # Credits
 - Dockerfile based on [xemuliam/docker-dbt](https://github.com/xemuliam/docker-dbt) to make it lighter.
-- Used the [Postgres Sakila DB](https://github.com/jOOQ/sakila) for sample data for playing.
+- Used the [Postgres Sakila DB](https://github.com/jOOQ/sakila) as sample data for playing.
